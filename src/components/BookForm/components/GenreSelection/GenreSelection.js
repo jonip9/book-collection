@@ -1,9 +1,6 @@
 import React from 'react';
-import useGenreSelection from './hooks'
 
 function GenreSelection(props) {
-  const { genres, genreChecked } = useGenreSelection();
-
   function handleSelection(e) {
     props.onSelection(e);
   }
@@ -31,7 +28,6 @@ function GenreSelection(props) {
             onChange={(e) => handleSelection(e)} />
         </label>
       </fieldset>
-      <p>{genres}</p>
     </>
   );
 }

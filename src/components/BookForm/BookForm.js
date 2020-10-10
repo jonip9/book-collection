@@ -11,7 +11,6 @@ function BookForm() {
 
   return (
     <>
-      <p>{formData.genre}</p>
       <form>
         <label>
           Name:

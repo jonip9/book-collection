@@ -25,7 +25,6 @@ function useOnValueChange() {
     } else {
       setFormData((state) => ({ ...state, [name]: value }));
     }
-    console.log(formData);
 
   }, [formData]);
 
