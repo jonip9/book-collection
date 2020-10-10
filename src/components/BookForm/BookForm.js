@@ -5,8 +5,8 @@ import useOnValueChange from './hooks';
 function BookForm() {
   const { formData, handleInput } = useOnValueChange();
 
-  function handleGenreSelection(e, genres = null) {
-    handleInput(e, genres);
+  function handleGenreSelection(e) {
+    handleInput(e);
   }
 
   return (

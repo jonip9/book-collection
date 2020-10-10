@@ -8,20 +8,22 @@ function useOnValueChange() {
     genre: [],
   });
 
-  const handleInput = useCallback((e, genres = null) => {
+  const handleInput = useCallback((e) => {
     const target = e.target;
     const name = target.name;
     const value = target.value;
 
-    if (genres !== null) {
-      /* if (genres.includes(value)) {
-        genres.filter(item => item !== value);
+    if (name === 'genre') {
+      let genres = formData.genre;
+      if (!target.checked) {
+        genres = genres.filter(item => item !== value);
+        setFormData((state) => ({ ...state, genre: genres }));
       } else {
         genres.push(value);
-      } */
-      setFormData((state) => ({ ...state, genre: [genres] }))
+        setFormData((state) => ({ ...state, genre: genres }));
+      }
     } else {
-      setFormData((state) => ({ ...state, [name]: value }))
+      setFormData((state) => ({ ...state, [name]: value }));
     }
     console.log(formData);
 

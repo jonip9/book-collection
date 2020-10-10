@@ -5,8 +5,7 @@ function GenreSelection(props) {
   const { genres, genreChecked } = useGenreSelection();
 
   function handleSelection(e) {
-    genreChecked(e);
-    props.onSelection(e, genres);
+    props.onSelection(e);
   }
 
   return (
@@ -17,7 +16,7 @@ function GenreSelection(props) {
           Text 1
           <input
             id="genre1"
-            name="genre1"
+            name="genre"
             type="checkbox"
             value="Genre 1"
             onChange={(e) => handleSelection(e)} />
@@ -26,7 +25,7 @@ function GenreSelection(props) {
           Text 2
           <input
             id="genre2"
-            name="genre2"
+            name="genre"
             type="checkbox"
             value="Genre 2"
             onChange={(e) => handleSelection(e)} />
