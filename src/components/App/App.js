@@ -18,7 +18,7 @@ function App() {
   return (
     <div className="App">
       <div className="grid-container">
-        <div className="grid-item">
+        <div className="grid-bookList">
           <BookList>
             {books.map((item, i) => {
               return (
@@ -27,7 +27,7 @@ function App() {
             })}
           </BookList>
         </div>
-        <div className="grid-item">
+        <div className="grid-bookForm">
           <BookForm />
         </div>
       </div>

@@ -1,6 +1,7 @@
 import React from 'react';
 import axios from 'axios';
 import BookGenre from './BookGenre';
+import './BookForm.css';
 import useOnValueChange from './hooks';
 
 function BookForm() {
@@ -17,10 +18,8 @@ function BookForm() {
 
   return (
     <>
-      <p>{formData.published}</p>
-      <form onSubmit={handleSubmit}>
-        <label>
-          Name:
+      <form className="bookForm" onSubmit={handleSubmit}>
+        <label>Name</label>
           <input
             id="name"
             name="name"
@@ -28,18 +27,16 @@ function BookForm() {
             value={formData.name}
             onChange={(e) =>
               handleInput(e)} />
-        </label>
-        <label>
-          Author:
+        <br />
+        <label>Author</label>
           <input
             id="author"
             name="author"
             type="text"
             onChange={(e) =>
               handleInput(e)} />
-        </label>
-        <label>
-          Published:
+        <br />
+        <label>Published</label>
           <input
             required={true}
             id="published"
@@ -47,9 +44,9 @@ function BookForm() {
             type="date"
             onChange={(e) =>
               handleInput(e)} />
-        </label>
+        <br />
         <BookGenre onSelection={handleGenreSelection} />
-        <button type="submit">Add</button>
+        <input type="submit" value="Add" />
       </form>
     </>
   );

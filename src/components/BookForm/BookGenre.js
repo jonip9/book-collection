@@ -1,4 +1,5 @@
 import React from 'react';
+import './BookForm.css';
 
 function BookGenre(props) {
   function handleSelection(e) {
@@ -8,25 +9,28 @@ function BookGenre(props) {
   return (
     <>
       <fieldset>
-        <legend>Genre:</legend>
-        <label>
-          Text 1
+        <legend>Genre</legend>
           <input
             id="genre1"
             name="genre"
             type="checkbox"
-            value="Genre 1"
+            value="Fantasy"
             onChange={(e) => handleSelection(e)} />
-        </label>
-        <label>
-          Text 2
+          <label>Fantasy</label>
           <input
             id="genre2"
             name="genre"
             type="checkbox"
-            value="Genre 2"
+            value="Science fiction"
             onChange={(e) => handleSelection(e)} />
-        </label>
+          <label>Science fiction</label>
+          <input
+            id="genre3"
+            name="genre"
+            type="checkbox"
+            value="Horror"
+            onChange={(e) => handleSelection(e)} />
+          <label>Horror</label>
       </fieldset>
     </>
   );
