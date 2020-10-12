@@ -1,13 +1,13 @@
 import React from 'react';
 
-function Book() {
+function Book(props) {
   return (
     <>
-        <tr>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
+        <tr key={props.book._id}>
+          <td>{props.book.name}</td>
+          <td>{props.book.author}</td>
+          <td>{props.book.published}</td>
+          <td>{props.book.genre}</td>
         </tr>
     </>
   );

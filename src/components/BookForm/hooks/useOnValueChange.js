@@ -4,7 +4,7 @@ function useOnValueChange() {
   const [formData, setFormData] = useState({
     name: '',
     author: '',
-    published: new Date(),
+    published: '',
     genre: [],
   });
 

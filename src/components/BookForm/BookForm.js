@@ -1,5 +1,6 @@
 import React from 'react';
-import GenreSelection from './components/GenreSelection';
+import axios from 'axios';
+import BookGenre from './BookGenre';
 import useOnValueChange from './hooks';
 
 function BookForm() {
@@ -9,9 +10,15 @@ function BookForm() {
     handleInput(e);
   }
 
+  function handleSubmit(e) {
+    axios.post('http://localhost:3000/books/', formData);
+    e.preventDefault();
+  }
+
   return (
     <>
-      <form>
+      <p>{formData.published}</p>
+      <form onSubmit={handleSubmit}>
         <label>
           Name:
           <input
@@ -34,13 +41,15 @@ function BookForm() {
         <label>
           Published:
           <input
+            required={true}
             id="published"
             name="published"
             type="date"
             onChange={(e) =>
               handleInput(e)} />
         </label>
-        <GenreSelection onSelection={handleGenreSelection} />
+        <BookGenre onSelection={handleGenreSelection} />
+        <button type="submit">Add</button>
       </form>
     </>
   );

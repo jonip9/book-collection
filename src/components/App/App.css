@@ -1,3 +1,10 @@
+.grid-container {
+  display: grid;
+  grid-template-columns: auto auto;
+  grid-template-rows: auto;
+  justify-content: space-around;
+}
+
 .App {
   text-align: center;
 }

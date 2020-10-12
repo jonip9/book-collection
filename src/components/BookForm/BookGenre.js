@@ -1,6 +1,6 @@
 import React from 'react';
 
-function GenreSelection(props) {
+function BookGenre(props) {
   function handleSelection(e) {
     props.onSelection(e);
   }
@@ -32,4 +32,4 @@ function GenreSelection(props) {
   );
 }
 
-export default GenreSelection;
+export default BookGenre;
