@@ -7,13 +7,16 @@ import BookForm from '../BookForm';
 
 function App() {
   const [books, setBooks] = useState([]);
+  const [refresh, setRefresh] = useState(false);
 
   useEffect(() => {
     axios.get('http://localhost:3000/books/')
       .then((response) => {
         setBooks(response.data);
-      });
-  }, []);
+        setRefresh(false);
+      })
+      .catch((error) => { console.error(error); });
+  }, [refresh]);
 
   return (
     <div className="App">
@@ -28,7 +31,7 @@ function App() {
           </BookList>
         </div>
         <div className="grid-bookForm">
-          <BookForm />
+          <BookForm handleRefresh={setRefresh} />
         </div>
       </div>
     </div>
