@@ -2,7 +2,7 @@
 A small web application made for practice to keep track of your books.
 
 ## Usage
-Assuming you have Node.Js installed, navigate to the project directory in command line/terminal and type the following commands.
+Assuming you have [Node.js](https://nodejs.org/en/) installed, navigate to the project directory in command line/terminal and type the following commands.
 
 ```
 npm install
