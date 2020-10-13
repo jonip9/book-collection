@@ -1,6 +1,15 @@
 import React from 'react';
+import axios from 'axios';
 
 function Book(props) {
+  function deleteBook() {
+    axios.delete('http://localhost:3000/books/delete/' + props.book._id)
+      .then(() => {
+        props.handleRefresh(true);
+      })
+      .catch((error) => { console.error(error); });
+  }
+
   function iterateGenres() {
     let genres = props.book.genre.sort();
     let genresString = '';
@@ -22,6 +31,12 @@ function Book(props) {
           <td>{props.book.author}</td>
           <td>{props.book.published}</td>
           <td>{iterateGenres()}</td>
+          <td>
+            <input 
+              type="button" 
+              value="Delete" 
+              onClick={deleteBook} />
+          </td>
         </tr>
     </>
   );

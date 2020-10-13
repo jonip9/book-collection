@@ -11,6 +11,7 @@ function BookList(props) {
             <th>Author</th>
             <th>Published</th>
             <th>Genre</th>
+            <th></th>
           </tr>
         </thead>
         <tbody>

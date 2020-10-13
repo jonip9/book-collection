@@ -25,7 +25,10 @@ function App() {
           <BookList>
             {books.map((item, i) => {
               return (
-                <Book book={item} key={item._id} />
+                <Book 
+                  book={item} 
+                  key={item._id}
+                  handleRefresh={setRefresh} />
               );
             })}
           </BookList>

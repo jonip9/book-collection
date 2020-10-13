@@ -12,7 +12,7 @@ function BookForm(props) {
   }
 
   function handleSubmit(e) {
-    axios.post('http://localhost:3000/books/', formData)
+    axios.post('http://localhost:3000/books/add', formData)
       .then(() => {
         props.handleRefresh(true);
       })

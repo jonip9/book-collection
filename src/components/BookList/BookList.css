@@ -8,6 +8,7 @@ table, tr, th, td {
 }
 
 th, td {
+  width: 20%;
   padding: 5px;
   text-align: left;
 }
@@ -19,4 +20,13 @@ th {
 
 tr:nth-child(even) {
   background-color: lightgray;
-} 
+}
+
+input[type=button] {
+  width: auto;
+  background-color: red;
+  color: white;
+  border: none;
+  text-decoration: none;
+  padding: 10px 15px;
+}
